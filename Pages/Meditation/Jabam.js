@@ -8,7 +8,7 @@ import Menubar from "../../Components/Menubar";
 import Headings from "../../Components/Headings";
 import MeditationOptions from "../../Components/Meditation/Meditationoptions";
 import Jabamcard from "../../Components/Meditation/Jabamcard";
-import JabamData from "../../Data/Jabamdata";
+import {Jabamdata} from "../../Data/Jabamdata";
 
 class Jabam extends Component {
   constructor(props) {
@@ -70,12 +70,12 @@ class Jabam extends Component {
         {/* News Feeds */}
         <Headings subtitle="Join with" title="Master Sri Ji" />
 
-        {JabamData.map((item) => (
+        {Jabamdata._j.map((item) => (
           <Jabamcard 
             key={item.id}
             title={item.title}
             imageUri={item.imageUri}
-            audioUri={item.audioUri}
+            audioUri={item.songUrl}
             times={item.times}
           />
         ))}

@@ -6,9 +6,9 @@ import { Audio } from 'expo-av'
 class Timer extends Component {
   constructor(props) {
     super(props)
-
-    const durationInMinutes = props.route?.params?.duration || 1
-    const songUrl = props.route?.params?.songUrl || 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
+    
+    const durationInMinutes = this.props.duration || 1
+    const songUrl = this.props.songUrl || 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
     this.state = {
       duration: durationInMinutes * 60,
       timeLeft: durationInMinutes * 60,

@@ -29,7 +29,7 @@ import Meditator from "../Pages/Meditation/Triyadhiyanam/Meditator/Meditator";
 const Stack = createStackNavigator();
 export default function AppStack(){
     return(
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator initialRouteName="Home">
             <Stack.Screen
                 name="Login"
                 options={{headerShown: false}}

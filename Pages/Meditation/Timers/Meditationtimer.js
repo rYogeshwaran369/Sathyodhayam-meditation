@@ -11,6 +11,9 @@ class Meditationtimer extends Component {
       screenWidth: Dimensions.get("window").width,
       screenHeight: Dimensions.get("window").height,
       isLandscape: Dimensions.get("window").width > Dimensions.get("window").height,
+      title: this.props.route.params?.title || '',
+      songUrl: this.props.route.params?.songUrl || '',
+      duration: this.props.route.params?.duration || 0,
     };
   }
 
@@ -34,11 +37,17 @@ class Meditationtimer extends Component {
   }
 
   render() {
+    const { title, songUrl, duration } = this.state;
+    console.log(duration)
+
     return (
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <Menubar style={styles.menubar} />
-        <Timer imageUri={'https:/i.ytimg.com/vi/D4xV6FWJ8mw/maxresdefault.jpg'} />\
-        <Headings/>
+        <Timer 
+          duration={duration} 
+          imageUri={songUrl}  // Use the song URL as an image URI for display, or adjust if needed
+        />
+        <Headings />
       </ScrollView>
     );
   }
